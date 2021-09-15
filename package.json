@@ -1,5 +1,5 @@
 {
-	"name": "monaco-editor",
+	"name": "@codingame/monaco-editor",
 	"version": "0.31.1",
 	"vscode": "5a1b4999493d49c857497ad481d73a737439f305",
 	"private": true,
@@ -27,7 +27,7 @@
 	"module": "./esm/vs/editor/editor.main.js",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/microsoft/monaco-editor"
+		"url": "https://github.com/CodinGame/monaco-editor"
 	},
 	"devDependencies": {
 		"@types/mocha": "^9.0.0",
