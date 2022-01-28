@@ -40,7 +40,7 @@ export function getTypeScriptWorker(): Promise<(...uris: Uri[]) => Promise<TypeS
 	});
 }
 
-function setupMode(
+export function setupMode(
 	defaults: LanguageServiceDefaults,
 	modeId: string
 ): (...uris: Uri[]) => Promise<TypeScriptWorker> {
