@@ -479,7 +479,7 @@ export interface TypeScriptWorker {
 
 // --- TypeScript configuration and defaults ---------
 
-class LanguageServiceDefaultsImpl implements LanguageServiceDefaults {
+export class LanguageServiceDefaultsImpl implements LanguageServiceDefaults {
 	private _onDidChange = new Emitter<void>();
 	private _onDidExtraLibsChange = new Emitter<void>();
 
@@ -676,6 +676,13 @@ export const getJavaScriptWorker = (): Promise<(...uris: Uri[]) => Promise<TypeS
 	return getMode().then((mode) => mode.getJavaScriptWorker());
 };
 
+export const setupMode = (
+	defaults: LanguageServiceDefaults,
+	modeId: string
+): Promise<(...uris: Uri[]) => Promise<TypeScriptWorker>> => {
+	return getMode().then((mode) => mode.setupMode(defaults, modeId));
+};
+
 // export to the global based API
 (<any>languages).typescript = {
 	ModuleKind,
@@ -687,7 +694,9 @@ export const getJavaScriptWorker = (): Promise<(...uris: Uri[]) => Promise<TypeS
 	typescriptDefaults,
 	javascriptDefaults,
 	getTypeScriptWorker,
-	getJavaScriptWorker
+	getJavaScriptWorker,
+	setupMode,
+	LanguageServiceDefaultsImpl
 };
 
 // --- Registration to monaco editor ---
