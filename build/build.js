@@ -38,7 +38,7 @@ dts(
 buildESM({
 	base: 'css',
 	entryPoints: ['src/css/monaco.contribution.ts', 'src/css/cssMode.ts', 'src/css/css.worker.ts'],
-	external: ['monaco-editor-core', '*/cssMode']
+	external: ['monaco-editor-core', '*/cssMode', '*/monaco.contribution']
 });
 buildAMD({
 	base: 'css',
@@ -68,7 +68,7 @@ buildESM({
 		'src/html/htmlMode.ts',
 		'src/html/html.worker.ts'
 	],
-	external: ['monaco-editor-core', '*/htmlMode']
+	external: ['monaco-editor-core', '*/htmlMode', '*/monaco.contribution']
 });
 buildAMD({
 	base: 'html',
@@ -98,7 +98,7 @@ buildESM({
 		'src/json/jsonMode.ts',
 		'src/json/json.worker.ts'
 	],
-	external: ['monaco-editor-core', '*/jsonMode']
+	external: ['monaco-editor-core', '*/jsonMode', '*/monaco.contribution']
 });
 buildAMD({
 	base: 'json',
@@ -133,7 +133,7 @@ buildESM({
 		'src/typescript/tsMode.ts',
 		'src/typescript/ts.worker.ts'
 	],
-	external: ['monaco-editor-core', '*/tsMode']
+	external: ['monaco-editor-core', '*/tsMode', '*/monaco.contribution']
 });
 buildAMD({
 	base: 'typescript',
