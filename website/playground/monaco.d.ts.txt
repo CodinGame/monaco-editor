@@ -1221,9 +1221,26 @@ declare namespace monaco.editor {
         readonly _serviceBrand: undefined;
         setTheme(themeName: string): void;
         setAutoDetectHighContrast(autoDetectHighContrast: boolean): void;
+        setForceHighContrast(forceHighContrast: boolean | null): void;
+        isHighContrastEnabled(): boolean;
         defineTheme(themeName: string, themeData: IStandaloneThemeData, semanticHighlighting?: boolean): void;
         getColorTheme(): IStandaloneTheme;
         setColorMapOverride(colorMapOverride: Color[] | null): void;
+    }
+
+    export class StandaloneThemeService extends Disposable implements IStandaloneThemeService {
+        readonly _serviceBrand: undefined;
+        readonly onDidColorThemeChange: any;
+        readonly onDidFileIconThemeChange: any;
+        constructor();
+        registerEditorContainer(domNode: HTMLElement): IDisposable;
+        defineTheme(themeName: string, themeData: IStandaloneThemeData, semanticHighlighting?: boolean): void;
+        getColorTheme(): IStandaloneTheme;
+        setColorMapOverride(colorMapOverride: Color[] | null): void;
+        setTheme(themeName: string): void;
+        isHighContrastEnabled(): boolean;
+        setAutoDetectHighContrast(autoDetectHighContrast: boolean): void;
+        setForceHighContrast(forceHighContrast: boolean | null): void;
     }
 
     export interface ITokenThemeRule {
